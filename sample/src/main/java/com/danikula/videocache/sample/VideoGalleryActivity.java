@@ -1,28 +1,35 @@
 package com.danikula.videocache.sample;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
+
 import com.viewpagerindicator.CirclePageIndicator;
 
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
 
-@EActivity(R.layout.activity_video_gallery)
 public class VideoGalleryActivity extends FragmentActivity {
 
-    @ViewById ViewPager viewPager;
-    @ViewById CirclePageIndicator viewPagerIndicator;
+    ViewPager viewPager;
+    CirclePageIndicator viewPagerIndicator;
 
-    @AfterViews
-    void afterViewInjected() {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_video_gallery);
+
+        viewPager = findViewById(R.id.viewPager);
+        viewPagerIndicator = findViewById(R.id.viewPagerIndicator);
+
         ViewsPagerAdapter viewsPagerAdapter = new ViewsPagerAdapter(this);
         viewPager.setAdapter(viewsPagerAdapter);
         viewPagerIndicator.setViewPager(viewPager);
     }
+
 
     private static final class ViewsPagerAdapter extends FragmentStatePagerAdapter {
 

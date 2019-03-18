@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="com.danikula.videocache.sample"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.danikula.videocache.sample">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -11,19 +11,20 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+        android:theme="@style/Theme.AppCompat.Light"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MenuActivity_"
+            android:name=".MenuActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SingleVideoActivity_" />
-        <activity android:name=".MultipleVideosActivity_" />
-        <activity android:name=".VideoGalleryActivity_" />
-        <activity android:name=".SharedCacheActivity_" />
+        <activity android:name=".SingleVideoActivity" />
+        <activity android:name=".MultipleVideosActivity" />
+        <activity android:name=".VideoGalleryActivity" />
+        <activity android:name=".SharedCacheActivity" />
     </application>
 
 </manifest>
